@@ -121,7 +121,7 @@ function Footer() {
             <ul className="mt-2 text-sm">
               <li>123 Business Rd.</li>
               <li>Business City, 54321</li>
-              <li>email@example.com</li>
+              <li>ankurghosh42@gmail.com</li>
               <li>+1 234 567 8900</li>
             </ul>
           </div>
