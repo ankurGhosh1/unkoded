@@ -7,7 +7,7 @@ import Heading2 from "@/components/Heading2";
 import Content1 from "@/components/Content1";
 import Button from "@/components/Button";
 import styles from "@/styles/main.module.css";
-
+import Stats from "@/components/Stats";
 // const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
 export default function Home() {
@@ -22,11 +22,12 @@ export default function Home() {
       <Container>
         <div className="py-32">
           <Heading1 className="text-center w-full">
-            Build an online brand. <br /> Land more clients.
+            Fast, Reliable, and Affordable <br /> Webflow Agency.
           </Heading1>
-          <Content1 className="text-center text-textGray">
-            Make your own landing page in just a few minutes. <br /> For
-            freelancers and consultants. No tech skills required.
+          <Content1 className="text-center text-textGray leading-relaxed">
+            At Unkoded, we specialize in transforming your <br />
+            Figma designs into high-performance Webflow websites, <br />{" "}
+            tailored to your unique needs.
           </Content1>
           <div className="flex items-center justify-center py-5">
             <Button
@@ -38,7 +39,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col items-center justify-center gap-16 py-24">
-            <div className="grid grid-cols-[.75fr_1fr] max-w-[940px] gap-8 max-md:grid-cols-1">
+            <div className="grid grid-cols-[.75fr_1fr] max-w-[1280px] gap-8 max-md:grid-cols-1">
               <div className="bg-third rounded-2xl shadow-custom hover:scale-105 transition duration-200">
                 <Image
                   src="/img1.png"
@@ -49,10 +50,12 @@ export default function Home() {
                 />
                 <div className="p-5">
                   <h2 className="text-xl text-white font-bold pb-2">
-                    Connect your own domain
+                    Webflow Migration by Expert Webflow Developers
                   </h2>
-                  <p className="text-base	text-textGray">
-                    Show off your ExpertPage profile on your own domain.
+                  <p className="text-base	text-textGray leading-relaxed">
+                    Transition your site with ease using our experienced Webflow
+                    developers. Ensure a seamless migration to Webflow,
+                    preserving your site’s performance and integrity.
                   </p>
                 </div>
               </div>
@@ -66,17 +69,18 @@ export default function Home() {
                 />
                 <div className="p-5">
                   <h2 className="text-xl text-white font-bold pb-2">
-                    Choose a theme
+                    Seamless Webflow Integrations by Leading Webflow Agency
                   </h2>
-                  <p className="text-base	text-textGray">
-                    Pick a style for your page that best fits your personality
-                    and your business.
+                  <p className="text-base	text-textGray leading-relaxed">
+                    Connect your Webflow site with essential tools and
+                    platforms. Our leading Webflow agency specializes in
+                    seamless integrations to enhance your online functionality.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="grid grid-cols-[1fr_.75fr] max-w-[940px] gap-8 max-md:grid-cols-1">
+            <div className="grid grid-cols-[1fr_.75fr] max-w-[1280px] gap-8 max-md:grid-cols-1">
               <div className="bg-third rounded-2xl shadow-custom hover:scale-105 transition duration-200">
                 <Image
                   src="/img3.png"
@@ -87,11 +91,12 @@ export default function Home() {
                 />
                 <div className="p-5">
                   <h2 className="text-xl text-white font-bold pb-2">
-                    Embed your calendar
+                    Comprehensive Webflow Maintenance by Top Webflow Experts
                   </h2>
-                  <p className="text-base	text-textGray">
-                    Integrate with Cal.com so leads can book directly into your
-                    calendar from your page.
+                  <p className="text-base	text-textGray leading-relaxed">
+                    Keep your Webflow site in top shape with our maintenance
+                    services. Our top Webflow experts provide regular updates,
+                    security checks, and performance optimizations.
                   </p>
                 </div>
               </div>
@@ -105,17 +110,19 @@ export default function Home() {
                 />
                 <div className="p-5">
                   <h2 className="text-xl text-white font-bold pb-2">
-                    Client testimonials
+                    Custom Webflow Development from Professional Webflow
+                    Designers
                   </h2>
-                  <p className="text-base	text-textGray">
-                    Tell your leads why they should work with you by letting
-                    your clients do the talking.
+                  <p className="text-base	text-textGray leading-relaxed">
+                    Achieve a unique, tailored website with our custom Webflow
+                    development services. Our professional Webflow designers
+                    bring your vision to life.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="grid grid-cols-[.75fr_1fr] max-w-[940px] gap-8 max-md:grid-cols-1">
+            <div className="grid grid-cols-[.75fr_1fr] max-w-[1280px] gap-8 max-md:grid-cols-1">
               <div className="bg-third rounded-2xl shadow-custom hover:scale-105 transition duration-200">
                 <Image
                   src="/img5.png"
@@ -126,9 +133,9 @@ export default function Home() {
                 />
                 <div className="p-5">
                   <h2 className="text-xl text-white font-bold pb-2">
-                    Feature blog posts
+                    Stunning Webflow Designs by Skilled Webflow Designers
                   </h2>
-                  <p className="text-base	text-textGray">
+                  <p className="text-base	text-textGray leading-relaxed">
                     Highlight your best writing by linking out to your blog
                     posts.
                   </p>
@@ -144,15 +151,22 @@ export default function Home() {
                 />
                 <div className="p-5">
                   <h2 className="text-xl text-white font-bold pb-2">
-                    Add your products & services
+                    Webflow SEO Optimization & Performance Optimization
                   </h2>
-                  <p className="text-base	text-textGray">
-                    Link out to your products and services to clients can
-                    convert right there and then.
+                  <p className="text-base	text-textGray leading-relaxed">
+                    We implement best practices to improve your search engine
+                    rankings and drive organic traffic and ensure your website
+                    is fast, reliable, and user-friendly. Our performance
+                    optimization services enhance loading times and overall user
+                    experience.
                   </p>
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className="flex justify-center">
+            <Stats />
           </div>
 
           <div className="flex flex-col items-center justify-center gap-4 py-24">

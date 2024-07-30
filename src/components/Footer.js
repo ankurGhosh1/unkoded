@@ -1,6 +1,10 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Container from "./Container";
+// import { Plus_Jakarta_Sans } from "next/font/google";
+
+// const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
 function Footer() {
   return (
@@ -8,19 +12,25 @@ function Footer() {
       <Container>
         <div className="grid grid-cols-[2fr_1fr_1fr_1fr] max-md:grid-cols-2 max-sm:grid-cols-1 gap-4">
           <div>
-            <Image
-              src="/next.svg"
-              alt="Logo"
-              className="w-24 h-auto"
-              height={30}
-              width={30}
-            />
+            <Link
+              href="/"
+              className={`text-xl font-bold text-white`} //${jakarta.className}
+            >
+              {/* <Image
+                src="/logo.png"
+                alt="Logo"
+                className="w-24 h-auto"
+                height={30}
+                width={30}
+              /> */}
+              Unkoded
+            </Link>
             <p className="mt-2 text-sm">
               Crafting solutions for tomorrow&apos;s challenges.
             </p>
             <ul className="mt-4 flex space-x-4">
               <li>
-                <a
+                <Link
                   href="https://twitter.com"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -32,10 +42,10 @@ function Footer() {
                     height={30}
                     width={30}
                   />
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="https://facebook.com"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -47,10 +57,10 @@ function Footer() {
                     height={30}
                     width={30}
                   />
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="https://instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -62,7 +72,7 @@ function Footer() {
                     height={30}
                     width={30}
                   />
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -70,24 +80,24 @@ function Footer() {
             <h3 className="font-bold">Services</h3>
             <ul className="mt-2 text-sm">
               <li>
-                <a href="#" className="hover:underline">
+                <Link href="#" className="hover:underline">
                   Web Development
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <Link href="#" className="hover:underline">
                   UI/UX Design
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <Link href="#" className="hover:underline">
                   E-commerce
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <Link href="#" className="hover:underline">
                   SEO Optimization
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -95,24 +105,24 @@ function Footer() {
             <h3 className="font-bold">Quick Links</h3>
             <ul className="mt-2 text-sm">
               <li>
-                <a href="#" className="hover:underline">
+                <Link href="#" className="hover:underline">
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <Link href="#" className="hover:underline">
                   Our Projects
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <Link href="#" className="hover:underline">
                   Testimonials
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <Link href="#" className="hover:underline">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

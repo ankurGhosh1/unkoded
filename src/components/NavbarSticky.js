@@ -14,13 +14,16 @@ const NavbarSticky = ({ sticky }) => {
       <Container>
         <div className="flex justify-between items-center">
           <div className="text-lg font-bold">
-            <Image
-              src="/next.svg"
-              alt="Logo"
-              className="w-24 h-auto"
-              height={30}
-              width={30}
-            />
+            <Link href="/" className="text-xl font-bold text-white">
+              {/* <Image
+                src="/logo.png"
+                alt="Logo"
+                className="w-24 h-auto"
+                height={30}
+                width={30}
+              /> */}
+              Unkoded
+            </Link>
           </div>
           <div className="max-md:hidden flex gap-8 items-center">
             {/* Menu for larger screens */}
