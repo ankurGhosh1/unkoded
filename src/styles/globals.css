@@ -2,15 +2,98 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #222;
+}
+
+::selection {
+  background-color: #ff4133;
+  color: #fff;
+}
+
 *::-webkit-scrollbar {
   width: 3px;
-  background-color: #1f2430;
+  background-color: #222;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #767676; /* Change color on hover */
+  background-color: #767676;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  background-color: #999; /* Change color on hover */
+  background-color: #999;
+}
+
+@layer utilities {
+  /* Silver gradient headline text */
+  .text-gradient {
+    background: linear-gradient(100deg, #f5f5f5 0%, #bdbdbd 45%, #8a8a8a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* Frosted card surface */
+  .glass {
+    background: rgba(34, 34, 34, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* Subtle blueprint grid backdrop */
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+  }
+}
+
+/* Animated underline for nav links */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  background: linear-gradient(90deg, #ff4133, #ff7a6e);
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Pause marquee on hover */
+.marquee-track:hover > div {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

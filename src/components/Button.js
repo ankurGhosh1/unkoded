@@ -1,14 +1,25 @@
 import React from "react";
-import styles from "@/styles/main.module.css";
 import Link from "next/link";
 
-function Button({ children, className, href }) {
+const SIZES = {
+  md: "px-8 py-4 text-sm uppercase tracking-[0.15em]",
+  sm: "px-6 py-2.5 text-base",
+};
+
+// Canonical CTA: white pill, accent arrow. Keep every call-to-action on
+// this component so the style stays consistent site-wide.
+function Button({ children, className = "", href, size = "md", arrow = true }) {
   return (
     <Link
-      className={`block ${className} px-8 py-3 rounded-xl text-white no-underline hover:scale-105 transition duration-200 hover:shadow-ctaShadow hover:drop-shadow-ctaTextShadow`}
+      className={`group inline-flex items-center gap-2.5 rounded-full bg-white font-semibold text-primary no-underline transition-transform duration-300 hover:scale-105 ${SIZES[size]} ${className}`}
       href={href}
     >
       {children}
+      {arrow && (
+        <span className="text-accent transition-transform duration-300 group-hover:translate-x-1">
+          &rarr;
+        </span>
+      )}
     </Link>
   );
 }

@@ -28,7 +28,7 @@ const HomePage = ({ blogs }) => {
           className={"py-16"}
         />
       </Container>
-      <div className="bg-secondary p-20">
+      <div className="border-y border-white/10 bg-primaryDark py-20">
         <Container>
           <CTA />
         </Container>

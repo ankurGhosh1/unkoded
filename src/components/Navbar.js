@@ -1,82 +1,87 @@
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import Container from "./Container";
 import Button from "@/components/Button";
+
+const NAV_LINKS = [
+  { href: "/", label: "Home" },
+  { href: "/#about", label: "About" },
+  { href: "/blog", label: "Blog" },
+];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="flex items-center text-white p-4 h-20 relative z-10">
+    <nav className="relative z-10 flex items-center p-4 text-white">
       <Container>
-        <div className="flex justify-between items-center">
-          <div className="text-lg font-bold">
-            <Link href="/" className="text-xl font-bold text-white">
-              {/* <Image
-                src="/logo.png"
-                alt="Logo"
-                className="w-24 h-auto"
-                height={30}
-                width={30}
-              /> */}
-              Unkoded
-            </Link>
-          </div>
-          <div className="max-md:hidden flex gap-8 items-center">
-            {/* Menu for larger screens */}
-            <Link href="/" className="text-lg">
-              Home
-            </Link>
-            <Link href="/about" className="text-lg">
-              About
-            </Link>
-            <Link href="/blog" className="text-lg">
-              Blog
-            </Link>
-            <Button
-              className="bg-gradient-to-r from-optional to-secondary text-lg"
-              href="/contact"
-            >
+        <div className="flex h-12 items-center justify-between">
+          <Link href="/" className="text-2xl font-bold tracking-tight text-white">
+            Unkoded<span className="text-accent">.</span>
+          </Link>
+
+          <div className="flex items-center gap-8 max-md:hidden">
+            {NAV_LINKS.map((link) => (
+              <Link key={link.href} href={link.href} className="nav-link text-lg">
+                {link.label}
+              </Link>
+            ))}
+            <Button href="/contact" size="sm">
               Contact
             </Button>
           </div>
+
           <div className="hidden max-md:flex">
-            {/* Hamburger Icon */}
-            <button onClick={() => setIsOpen(!isOpen)}>
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
+              aria-expanded={isOpen}
+            >
               <svg
-                className="w-6 h-6"
+                className="h-6 w-6"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16m-7 6h7"
-                ></path>
+                {isOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16m-7 6h7"
+                  />
+                )}
               </svg>
             </button>
           </div>
         </div>
+
         {/* Mobile Menu */}
         <div
-          className={`md:hidden ${isOpen ? "block" : "hidden"} animate-slideIn`}
+          className={`overflow-hidden transition-all duration-300 ease-out md:hidden ${
+            isOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
+          }`}
         >
-          <ul className="space-y-2 mt-4">
+          <ul className="mt-4 space-y-3">
+            {NAV_LINKS.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} className="text-lg text-textGray hover:text-white transition-colors">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
             <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/about">About</Link>
-            </li>
-            <li>
-              <Link href="/blog">Blog</Link>
-            </li>
-            <li>
-              <Link href="/contact">Contact</Link>
+              <Link href="/contact" className="text-lg text-textGray hover:text-white transition-colors">
+                Contact
+              </Link>
             </li>
           </ul>
         </div>
